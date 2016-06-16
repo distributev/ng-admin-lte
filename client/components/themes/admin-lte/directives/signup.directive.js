@@ -12,7 +12,7 @@
       templateUrl: 'components/themes/admin-lte/views/signup.view.html',
       restrict: 'E',
       controller: 'SignupController',
-      controllerAs: 'vm'
+      controllerAs: 'signup'
     };
   }
 })();

@@ -12,7 +12,7 @@
       templateUrl: 'components/themes/admin-lte/views/login.view.html',
       restrict: 'E',
       controller: 'LoginController',
-      controllerAs: 'vm'
+      controllerAs: 'login'
     };
   }
 })();
