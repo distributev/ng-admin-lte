@@ -4,7 +4,7 @@
       <li class="header">MAIN NAVIGATION</li>
       <li ng-repeat="item in mainSidebar.menu.items" ui-sref-active="active">
         <a ui-sref="{{item.state}}">
-          <span ng-bind="item.title"></span>
+          <i class="{{item.class}}"></i> <span ng-bind="item.title"></span>
         </a>
       </li>
     </ul>

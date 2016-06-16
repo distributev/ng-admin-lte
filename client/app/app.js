@@ -20,15 +20,16 @@ angular.module('ngAdminBootswatchApp', ['ngAdminBootswatchApp.auth', 'ngAdminBoo
         title: 'Customers',
         state: 'customers',
         type: 'dropdown',
-        roles: ['user']
+        roles: ['user'],
+        class: 'fa fa-dashboard'
       });
 
       menuService.addMenuItem('nav', {
         title: 'Transactions',
         state: 'transactions',
         type: 'dropdown',
-        roles: ['user']
+        roles: ['user'],
+        class: 'fa fa-files-o'
       });
-  
+
   }]);
- 

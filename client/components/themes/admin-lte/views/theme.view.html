@@ -1,6 +1,6 @@
 <div ng-switch="themeCtrl.isLoggedIn">
   <div ng-switch-when="true">
-    <dashboard ng-if="themeCtrl.isLoggedIn"></dashboard>
+    <dashboard></dashboard>
   </div>
   <div ng-switch-when="false">
     <login ng-if="$state.includes('login')"></login>
