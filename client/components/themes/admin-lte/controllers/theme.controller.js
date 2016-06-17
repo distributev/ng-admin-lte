@@ -5,9 +5,9 @@
     .module('admin-lte')
     .controller('ThemeController', ThemeController);
 
-  ThemeController.$inject = ['$scope', 'Auth', 'ThemeStyleService'];
+  ThemeController.$inject = ['Auth', 'ThemeStyleService'];
 
-  function ThemeController($scope, Auth, ThemeStyleService) {
+  function ThemeController(Auth, ThemeStyleService) {
     var vm = this;
     vm.isLoggedIn = false;
 
@@ -16,13 +16,13 @@
     function activate() {
       $.AdminLTE.layout.activate();
       ThemeStyleService.toggleMiniSidebar(true);
+
+      Auth.isLoggedIn(function(isLoggedIn) {
+        vm.isLoggedIn = isLoggedIn;
+
+        var userTheme = Auth.getCurrentUser().theme;
+        ThemeStyleService.changeSkin(userTheme);
+      });
     }
-
-    $scope.$watch('Auth.getCurrentUser().token', function(newVal) {
-      vm.isLoggedIn = newVal ? true : false;
-
-      var userTheme = Auth.getCurrentUser().theme;
-      ThemeStyleService.changeSkin(userTheme);
-    });
   }
 })();
