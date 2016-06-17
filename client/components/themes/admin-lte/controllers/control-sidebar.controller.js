@@ -5,28 +5,13 @@
     .module('admin-lte')
     .controller('ControlSidebarController', ControlSidebarController);
 
-  ControlSidebarController.$inject = [];
+  ControlSidebarController.$inject = ['ThemeStyleService'];
 
-  function ControlSidebarController() {
-
-    var themeSkins = [
-      'skin-blue',
-      'skin-black',
-      'skin-red',
-      'skin-yellow',
-      'skin-purple',
-      'skin-green',
-      'skin-blue-light',
-      'skin-black-light',
-      'skin-red-light',
-      'skin-yellow-light',
-      'skin-purple-light',
-      'skin-green-light'
-    ];
+  function ControlSidebarController(ThemeStyleService) {
 
     $('[data-skin]').on('click', function (e) {
       e.preventDefault();
-      changeSkin($(this).data('skin'));
+      ThemeStyleService.changeSkin($(this).data('skin'));
     });
 
     $('[data-layout]').on('click', function() {
@@ -71,15 +56,5 @@
       $.AdminLTE.controlSidebar._fix($('.control-sidebar-bg'));
       $.AdminLTE.controlSidebar._fix($('.control-sidebar'));
     }
-
-    function changeSkin(cls) {
-      $.each(themeSkins, function (i) {
-        $('body').removeClass(themeSkins[i]);
-      });
-
-      $('body').addClass(cls);
-      return false;
-    }
   }
 })();
-
