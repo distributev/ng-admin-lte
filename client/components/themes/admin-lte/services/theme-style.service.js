@@ -35,8 +35,8 @@
 
         $('body').addClass(skinClassName);
 
-        Auth.getCurrentUser().theme = name;
-        Auth.changeTheme(name).then(function() {
+        Auth.getCurrentUser().theme = skinClassName;
+        Auth.changeTheme(skinClassName).then(function() {
           Auth.getCurrentUser().theme = skinClassName;
           console.log('Successfully updated theme: ', skinClassName);
         });
